@@ -30,4 +30,5 @@ jobs:
         uses: blenderkit/blender-addon-release@main
         with:
           artifact_name: sample-addon
+          release_name: SampleAddon
           version: ${{github.event.inputs.version}}
