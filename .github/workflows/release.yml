@@ -21,4 +21,4 @@ jobs:
       - name: Release addon
         uses: blenderkit/blender-addon-release@main
         with:
-          artifact_name: sample-addon.zip
+          artifact_name: sample-addon
