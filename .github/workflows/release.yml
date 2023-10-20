@@ -1,5 +1,4 @@
-name: Build
-
+name: Release
 on:
   pull_request:
     branches: [ '**' ]
@@ -12,7 +11,7 @@ jobs:
       - name: Build addon
         uses: blenderkit/blender-addon-build@main
         with:
-          name: n-panel-manager
+          name: sample-addon
           exclude-files: ".git;.github;README.md"
 
   Release:
@@ -22,4 +21,4 @@ jobs:
       - name: Release addon
         uses: blenderkit/blender-addon-release@main
         with:
-          artifact_name: n-panel-manager
+          artifact_name: sample-addon.zip

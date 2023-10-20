@@ -1,5 +1,4 @@
 name: Build
-
 on:
   pull_request:
     branches: [ '**' ]
@@ -12,5 +11,5 @@ jobs:
       - name: Build addon
         uses: blenderkit/blender-addon-build@main
         with:
-          name: n-panel-manager
+          name: sample-addon
           exclude-files: ".git;.github;README.md"
