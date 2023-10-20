@@ -3,6 +3,11 @@ on:
   pull_request:
     branches: [ '**' ]
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'version'
+        required: true
+        default: '1.0.0'
 
 jobs:
   Build:
@@ -22,3 +27,4 @@ jobs:
         uses: blenderkit/blender-addon-release@main
         with:
           artifact_name: sample-addon
+          version: ${{github.event.inputs.version}}
