@@ -11,9 +11,10 @@ bl_info = {
 }
 
 from . import nice
+from . npanel import npanel
 
 
-modules =  [nice] 
+modules =  [npanel]
 
 def register():
     nice.hello()
