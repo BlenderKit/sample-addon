@@ -3,7 +3,7 @@ import argparse
 import shutil
 import os
 
-ADDON_NAME = 'sample-addon'
+ADDON_NAME = 'sample_addon'
 
 
 def do_build(install_at=None, include_tests=False):
@@ -22,7 +22,7 @@ def do_build(install_at=None, include_tests=False):
             continue  # we copied directories above
         if item in ignore_files:
             continue
-        if include_tests is False and item == "test.py":
+        if include_tests is False and item == "tests.py":
             continue
         if include_tests is False and item.startswith("test_"):
             continue  # we do not include test files
@@ -43,10 +43,11 @@ def run_tests():
             "blender",
             "--background",
             "-noaudio",
+            "--factory-startup",
             "--python-exit-code",
             "1",
             "--python",
-            "test.py",
+            "tests/tests.py",
         ]
     )
     test.wait()
