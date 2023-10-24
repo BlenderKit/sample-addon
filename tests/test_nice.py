@@ -5,7 +5,6 @@ from io import StringIO
 from sample_addon import nice
 
 class TestFunctions(unittest.TestCase):
-    
     def setUp(self):
         # Redirect the print output to a StringIO object
         self.held_output = StringIO()
@@ -27,6 +26,3 @@ class TestFunctions(unittest.TestCase):
         self.held_output.seek(0)  # Go to the beginning of the StringIO buffer
         output = self.held_output.read().strip()  # Read the content and remove any trailing whitespaces
         self.assertEqual(output, "Goodbye!")
-
-if __name__ == "__main__":
-    unittest.main()
