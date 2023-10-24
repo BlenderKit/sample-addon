@@ -14,6 +14,7 @@ from . import nice
 from . npanel import npanel
 
 
+
 modules =  [npanel]
 
 def register():
