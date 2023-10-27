@@ -1,5 +1,7 @@
 name: build_and_test
 on:
+  push:
+    branches: [ 'main' ]
   pull_request:
     branches: [ '**' ]
   workflow_dispatch:
@@ -14,7 +16,7 @@ jobs:
       - name: Store the build
         uses: actions/upload-artifact@v3
         with:
-          name: sample-addon-PR${{ github.event.pull_request.number }}-${{ github.sha }}
+          name: sample-addon-${{ github.event_name == 'pull_request' && format('PR{0}', github.event.pull_request.number) || github.sha }}
           path: |
             out
             !out/sample-addon.zip
