@@ -46,10 +46,10 @@ jobs = [
         "download_url": "https://download.blender.org/release/Blender3.3/blender-3.3.0-linux-x64.tar.xz",
     },
     {
-        "version": "3.3.10",
+        "version": "3.3.12",
         "version_x_y": "3.3",
         "sha": "released",
-        "download_url": "https://download.blender.org/release/Blender3.3/blender-3.3.10-linux-x64.tar.xz",
+        "download_url": "https://download.blender.org/release/Blender3.3/blender-3.3.12-linux-x64.tar.xz",
     },
     {
         "version": "3.4.0",
@@ -82,10 +82,10 @@ jobs = [
         "download_url": "https://download.blender.org/release/Blender3.6/blender-3.6.0-linux-x64.tar.xz",
     },
     {
-        "version": "3.6.2",
+        "version": "3.6.5",
         "version_x_y": "3.6",
         "sha": "released",
-        "download_url": "https://download.blender.org/release/Blender3.6/blender-3.6.2-linux-x64.tar.xz",
+        "download_url": "https://download.blender.org/release/Blender3.6/blender-3.6.5-linux-x64.tar.xz",
     },
     # {'version': '', 'version_x_y': '', 'download_url': ''},
 ]
@@ -105,12 +105,14 @@ def get_daily_builds(jobs: list):
             "download_url": release[0],
             "sha": release[3],
         }
-        if new_job["version"].removesuffix("-stable") not in [
-            job["version"] for job in jobs
-        ]:
+        if new_job["version"] in [job["version"] for job in jobs]:
+            continue
+
+        if new_job["version"].removesuffix("-stable") not in [job["version"] for job in jobs]:
             jobs.append(new_job)
 
 
-get_daily_builds(jobs)
-matrix = {"include": jobs}
-print(f"matrix={matrix}")
+if __name__ == "__main__":
+    get_daily_builds(jobs)
+    matrix = {"include": jobs}
+    print(f"matrix={matrix}")
