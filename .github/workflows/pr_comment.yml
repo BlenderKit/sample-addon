@@ -1,8 +1,8 @@
 
-name: PR-comment
+name: pr_comment
 on:
   workflow_run:
-    workflows: [PR]
+    workflows: [simple_build]
     types: [completed]
 
 jobs:

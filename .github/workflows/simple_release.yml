@@ -1,7 +1,8 @@
-name: Release
+# Simple release job example which build the addon and creates draft for the release.
+# Job has to be started manually.
+
+name: simple_release
 on:
-  pull_request:
-    branches: [ '**' ]
   workflow_dispatch:
     inputs:
       version:
