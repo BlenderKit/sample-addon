@@ -1,8 +1,15 @@
-name: PR
+#Simple build to run on merge to main and on change of PR on any branch.
+#Can be also triggered manually from the Actions tab.
+#Build is available as artifact once action finishes.
+
+name: simple_build
 on:
+  push:
+    branches: [ 'main']
   pull_request:
     branches: [ '**' ]
   workflow_dispatch:
+  
 
 jobs:
   Build:
