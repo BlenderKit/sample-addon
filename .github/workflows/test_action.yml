@@ -28,14 +28,6 @@ jobs:
 
   TESTS:
     needs: make-tests-matrix
-    runs-on: ubuntu-latest
-    strategy:
-      matrix: ${{fromJson(needs.make-tests-matrix.outputs.matrix)}}
-
-
-
-  TESTS:
-    needs: make-tests-matrix
     continue-on-error: true
     runs-on: ubuntu-latest
     strategy:
