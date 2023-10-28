@@ -4,10 +4,10 @@ bl_info = {
     "author": "Andreas Gajdosik",
     "version": (1, 0, 0),
     "blender": (3, 0, 0),
-    "location": "Properties Panel > Scene Tab > Sample Addon",
+    "location": "3D View > N Panel > Sample Addon",
     "description": "Prints hello on registration, and goodbye on unregistration",
-    "warning": "Does nothing useful",
-    "category": "Workspace",
+    "warning": "For demonstration purposes only",
+    "category": "Development",
 }
 
 from . import nice
