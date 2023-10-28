@@ -3,20 +3,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  Build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Build add-on
-        run: python dev.py build
-      - name: Store the build
-        uses: actions/upload-artifact@v3
-        with:
-          name: sample-addon-${{ github.event_name == 'pull_request' && format('PR{0}', github.event.pull_request.number) || github.sha }}
-          path: |
-            out
-            !out/sample-addon.zip
-
   make-tests-matrix:
     runs-on: ubuntu-latest
     outputs:
