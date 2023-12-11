@@ -4,6 +4,7 @@ on:
     workflows: ["simple_build"]
     types: [completed]
 
+
 jobs:
   artifacts-url-comments:
     name: Add artifact link to PR and related issue
